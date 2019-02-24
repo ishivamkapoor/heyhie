@@ -6,8 +6,10 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: true}));
 
 const serverConnection=require("./server");
+const modelInit = require("./server/model"); 
 
 serverConnection();
+modelInit(app);
 
 app.use("/api",require("./server/route"));
 
